@@ -1,0 +1,20 @@
+$Id: TODO 44 2006-03-26 18:53:18Z ms $
+
+Ugly:
+- avoid a bus reset if possible
+
+Stability and portability:
+- integrate timeouts in some whiles to eliminate the chance of an infinite loop
+- much more error handling (malloc, fopen, usb_* etc.)
+- check endianess
+- checksum tests for answer buffers
+
+Features:
+- support scanning multiple pages with the ADF at once
+- support the two copy buttons (simple, see SCRATCH)
+
+Clarify:
+- which resolutions are really supported?
+- why does d420 sometimes return 0x20 instead of 0x38 to signal the last packet?
+- what does eb80 effect (see SCRATCH)?
+- is e90200010 calibration related?

@@ -1,0 +1,73 @@
+Canon Pixma Scanner Driver
+
+Copyright (C) 2006  Martin Schewe  <pixma@schewe.com>
+
+You always find the most recent version on http://pixma.schewe.com.
+$Id: README 82 2006-04-14 01:03:17Z ms $
+
+
+Introduction
+============
+
+This is a driver for the Canon Pixma MP7x0 scanner, which has been developed
+by sniffing and analysing the Windows driver's communication.  It is far from
+perfect, but after all, it supports among other things these basic features:
+
+- all resolutions: 75/150/300/600/... dpi
+- user defined image offsets and sizes
+- ADF and flatbed
+- calibration
+- reset / recovery on errors
+- basic status handling and
+- things I might have forgotten :)
+
+If you have a Pixma scanner other than 7x0, you should consider contacting me.
+It is pretty simple to check if your scanner uses a similar protocol and maybe
+your model could be integrated smoothly by just adding another USB product ID.
+
+
+Compatibility
+=============
+
+MP730/750/760/780: supported
+MP150/170/450/500: work in progress
+MP800/830        : unknown
+MP110/130        : looks incompatible
+
+
+Installation
+============
+
+$ make
+$ sudo make install
+
+
+Test
+====
+
+$ sudo make test
+
+
+Usage
+=====
+
+The image acquisition tool is called pixma_scan and must be run as root.  You
+will get a short help message if you run it without any argument.
+
+
+Example
+=======
+
+$ sudo pixma_scan -r 150 -x 60 -y 10 -w 800 -h 580 -o test.pnm
+
+
+Credits
+=======
+
+A little late I noticed some similarities between the protocol of the CanoScan
+parallel scanners and the Pixma USB scanner.  Sometimes the code of the
+sane-backend canon_pp was helpful to clarify things.
+
+Thanks to Jose Juan Iglesias Rebollo, Farvil and Wittawat Yamwong for helping
+with devices I do not own (MP450 and MP150).  BTW:  Wittawat has written his own
+driver for the MP150, which will probably be officially released by him soon.

@@ -1,0 +1,68 @@
+2006-04-14  Martin Schewe <pixma@schewe.com>
+
+	* Add gamma for protocol 1
+	* Fix hangover buffer handling
+	* Fix packet_len for protocol 1
+	* Release 0.5.1
+
+
+2006-04-12  Martin Schewe <pixma@schewe.com>
+
+	* Support image reads in more than one burst
+	* Many fixes for protocol 1
+	* add MP730
+	* Implement a hangover buffer
+	* No RGB interleaving for protocol > 0
+	* Release 0.5.0
+
+
+2006-04-01  Martin Schewe <pixma@schewe.com>
+
+	* Set PACKET_SIZE to 0x0800
+	* Release 0.4.5
+
+
+2006-04-01  Martin Schewe <pixma@schewe.com>
+
+	* Retry on d420-ERR
+	* Support MP760
+	* Release 0.4.4
+
+
+2006-03-28  Martin Schewe <pixma@schewe.com>
+
+	* More fixes for MP150 et al.
+	* Reverted a bug for MP7x0
+	* Release 0.4.2
+
+
+2006-03-28  Martin Schewe <pixma@schewe.com>
+
+	* More fixes for MP150 et al.
+	* Release 0.4.1
+
+
+2006-03-28  Martin Schewe <pixma@schewe.com>
+
+	* Fix calibration
+	* Abstract command handling to support different protocol variants
+	* Introduce protocol 1 for MP150 et al.
+	* Release 0.4
+
+
+2006-03-26  Martin Schewe <pixma@schewe.com>
+
+	* Incorporate model descriptions for MP450/500
+	* Release 0.3
+
+
+2006-03-26  Martin Schewe <pixma@schewe.com>
+
+	* Incorporate model descriptions for MP110/130/150/170/750/780
+	* Tell the user when the ADF is empty
+	* Release 0.2
+
+
+2006-03-25  Martin Schewe <pixma@schewe.com>
+
+	* Initial release 0.1
