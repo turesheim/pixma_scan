@@ -1,10 +1,13 @@
 Canon Pixma Scanner Driver
 
 Copyright (C) 2006  Martin Schewe  <pixma@schewe.com>
+Copyright (C) 2013  Torkild U. Resheim  <torkildr@gmail.com>
 
 You always find the most recent version on http://pixma.schewe.com.
 $Id: README 82 2006-04-14 01:03:17Z ms $
 
+The forked version with some minor enhancements by Torkild U. Resheim can be
+found at https://github.com/turesheim/pixma_scan.
 
 Introduction
 ============

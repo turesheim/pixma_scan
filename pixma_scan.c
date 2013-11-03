@@ -2,6 +2,7 @@
  * Canon Pixma Scanner Driver / Simple image acquisition tool
  *
  * Copyright (C) 2006  Martin Schewe  <pixma@schewe.com>
+ * Copyright (C) 2013  Torkild U. Resheim  <torkildr@gmail.com>
  *
  * You always find the most recent version on http://pixma.schewe.com.
  * $Id: pixma_scan.c 75 2006-04-13 23:02:17Z ms $
@@ -69,6 +70,26 @@ void usage()
 	exit(EXIT_FAILURE);
 }
 
+int testAdf()
+{
+	int code = EXIT_FAILURE;
+	
+	if (pixma_open() < 0) {
+		fprintf(stderr, "Could not connect to scanner\n");
+		return code;
+	}
+	
+	pixma_init();
+								
+	if (pixma_adf_is_ready()){
+		DBG(1,"There is a sheet in the ADF\n");
+		code = EXIT_SUCCESS;
+	} else {
+		DBG(1, "There is NOT a sheet in the ADF\n");
+	}
+	pixma_close();
+	return code;
+}
 
 /*
  * Parse arguments, setup parameters, scan and write the image to a file
@@ -89,7 +110,7 @@ int main(int argc, char **argv)
 	int		height		= 0;
 
 	int opt;
-	while ((opt = getopt(argc, argv, "r:x:y:w:h:camv:o:")) != -1) {
+	while ((opt = getopt(argc, argv, "r:x:y:w:h:tcamv:o:")) != -1) {
 		switch (opt) {
 			case 'r':
 				resolution = atoi(optarg);
@@ -105,6 +126,9 @@ int main(int argc, char **argv)
 				break;
 			case 'h':
 				height = atoi(optarg);
+				break;
+			case 't':
+				return testAdf();
 				break;
 			case 'c':
 				calibration = 1;

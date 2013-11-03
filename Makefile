@@ -40,6 +40,7 @@ install: all
 	install -o root -g root -m 755 -s $(BINARIES) $(BINDIR)
 
 test: all
+	./pixma_scan -t
 	./pixma_scan -r 150 -x 60 -y 10 -w 800 -h 580 -o $(TESTFILE)
 	qiv $(TESTFILE)
 	@echo "*** make $@ leaved a testfile called $(TESTFILE) behind ***"
